@@ -15,6 +15,7 @@ module Turnip
           begin
             require 'spec_helper'
           rescue LoadError
+            warn "Cannot load spec_helper: #{e.message}"
           end
           Turnip::RSpec.run(a.first)
         else
